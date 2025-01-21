@@ -96,6 +96,7 @@ class PracticalTest02MainActivityv10 : AppCompatActivity() {
         pokemonImageView = findViewById(R.id.pokemonImageView)
         powerUpTextView = findViewById(R.id.powerUpTextView)
         pokemonTypeTextView = findViewById(R.id.pokemonTypeTextView)
+        switchActivityBtn = findViewById(R.id.switchActivityBtn)
 
         searchBtn.setOnClickListener {
             val pokemonInput = pokemonNameText.text.toString()
@@ -104,6 +105,11 @@ class PracticalTest02MainActivityv10 : AppCompatActivity() {
             } else {
                 showError("Please enter a Pokémon name!")
             }
+        }
+
+        switchActivityBtn.setOnClickListener {
+            val intent = Intent(this, PracticalTest02SecondaryActivityv10::class.java)
+            startActivity(intent)
         }
     }
 }
